@@ -1,167 +1,483 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jatin Kumar | Frontend Developer Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jatin Kumar - Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom CSS for styling */
+        :root {
+            --primary-color: #4a90e2; /* A softer, professional blue */
+            --primary-hover-color: #357ABD;
+            --background-color: #fdfdff;
+            --light-gray-bg: #f8f9fa;
+            --text-color: #333;
+            --subtle-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --hover-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        /* Navigation bar styling */
+        .navbar {
+            background-color: #fff;
+            box-shadow: var(--subtle-shadow);
+            transition: background-color 0.3s;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .nav-link {
+            color: #555;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero section styling */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://placehold.co/1920x1080/4a90e2/ffffff?text=Hello') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            padding: 150px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+        }
+
+        .hero .btn-primary {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            box-shadow: var(--subtle-shadow);
+        }
+
+        .hero .btn-primary:hover {
+            background-color: var(--primary-hover-color);
+        }
+        
+        /* About Me section */
+        #about .profile-pic {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: var(--hover-shadow);
+            border: 5px solid #fff;
+        }
+        
+        #about .btn-outline-primary {
+             color: var(--primary-color);
+             border-color: var(--primary-color);
+        }
+        
+        #about .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+
+        /* Section styling */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        /* Card styling for sections */
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: var(--subtle-shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+
+        /* Skills section styling */
+        .skill-item {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Experience and Education timeline styling */
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+            border-left: 2px solid var(--primary-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -59px;
+            top: 5px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 3px solid #fff;
+        }
+
+        .timeline-item h4 {
+            font-weight: 600;
+        }
+
+        /* Project card styling */
+        .project-card .card-body {
+            text-align: center;
+        }
+
+        .project-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        /* Scroll to top button styling */
+        #scrollTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: var(--primary-color);
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 18px;
+            box-shadow: var(--subtle-shadow);
+        }
+
+        #scrollTopBtn:hover {
+            background-color: var(--primary-hover-color);
+        }
+    </style>
 </head>
 <body>
-  <div id="background-graphics"></div>
-  <header class="hero">
-    <div class="container">
-      <div class="hero-top">
-        <div class="profile-photo">
-          <img src="profile-placeholder.png" alt="Jatin Kumar Photo" />
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Jatin Kumar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">Contact</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="hero-info">
-          <h1>Jatin Kumar</h1>
-          <p class="subtitle">Front-End Developer | 3 Years Experience | Angular & React Specialist</p>
-          <div class="contact-info">
-            <a href="mailto:jatinkr27@gmail.com">jatinkr27@gmail.com</a> |
-            <a href="tel:+919102007474">+91 9102007474</a> |
-            Hyderabad, Telangana, India
-          </div>
-          <div class="social-links">
-            <a href="https://www.linkedin.com/in/jatin-kumar-9429771b3/" target="_blank">LinkedIn</a> |
-            <a href="#" target="_blank">Portfolio Link</a>
-          </div>
-          <div class="hero-actions">
-            <a href="#" class="cta" id="contactMeBtn">Contact Me</a>
-            <a href="resume.pdf" class="cta" download>Download Resume</a>
-          </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="container">
+            <h1>Jatin Kumar</h1>
+            <p>Front-End Developer | Angular, React, JavaScript</p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal">Get in Touch</button>
         </div>
-      </div>
-    </div>
-  </header>
-  <nav class="navbar">
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#education">Education</a></li>
-    </ul>
-  </nav>
-  <main>
-    <section id="about" class="about section" data-aos="fade-up">
-      <div class="container">
-        <h2>About Me</h2>
-        <p>Front-End Developer with 3 years of experience in Angular, React, and JavaScript. Skilled in UI/UX, security, and performance optimization. Proficient in data structures, algorithms, and cross-team collaboration.</p>
-      </div>
-    </section>
-    <section id="skills" class="skills section" data-aos="fade-up" data-aos-delay="100">
-      <div class="container">
-        <h2>Key Skills</h2>
-        <ul class="skills-list">
-          <li>HTML5</li>
-          <li>CSS3</li>
-          <li>JavaScript (ES6)</li>
-          <li>Angular</li>
-          <li>React.js</li>
-          <li>C</li>
-          <li>Core Java</li>
-          <li>SQL</li>
-          <li>Algorithms & Data Structures</li>
-          <li>Handlebars.js</li>
-          <li>Jasmine & Karma</li>
-        </ul>
-      </div>
-    </section>
-    <section id="experience" class="experience section" data-aos="fade-up" data-aos-delay="200">
-      <div class="container">
-        <h2>Experience</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <span class="timeline-date">11/2022 – Present</span>
-            <h3>Analyst, Deloitte USI | Hyderabad, India</h3>
-            <ul>
-              <li>Front-End Developer</li>
-              <li>Delivered high-complexity user stories, enhancing project functionality and client satisfaction.</li>
-              <li>Resolved bugs promptly, ensuring seamless project operation and client satisfaction.</li>
-              <li>Developed sticky functionalities for clients, including floating labels, navigation menus, and other components, improving user experience.</li>
-              <li>Crafted the bottom navigation bar, contributing to project navigation efficiency.</li>
-              <li>Utilized HTML5, CSS3, SCSS, Handlebars.js, and ES6 to create interactive components (modals, tabs, sections), enhancing UI and UX.</li>
-              <li>Maintained speedy, error-free, optimized delivery, accurate work status reporting, sprint demos, and minimized spill-overs, gaining client trust.</li>
-              <li>Received Spot Award for Outstanding performance.</li>
-              <li><strong>Exploring:</strong> Angular for dynamic SPAs, Transmit Security for security protocols, Jasmine & Karma for unit testing and code reliability.</li>
-            </ul>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-date">07/2021 – 08/2021</span>
-            <h3>Intern, The Sparks Foundation</h3>
-            <ul>
-              <li>Cloud Computing: Implemented AWS EC2 Instance and S3 Service.</li>
-            </ul>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-date">02/2020 – 03/2020</span>
-            <h3>Intern, Central Coalfields Limited | Ranchi, India</h3>
-            <ul>
-              <li>Coverage Of Biometric Attendance System.</li>
-              <li>Recorded employee registration for Biometric Attendance System across branches.</li>
-              <li>Technologies: HTML, CSS, JS, PHP, MySQL.</li>
-            </ul>
-          </div>
+    </header>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center mb-4 mb-md-0">
+                    <img src="https://placehold.co/400x400/EFEFEF/333?text=JK" alt="Jatin Kumar" class="profile-pic">
+                </div>
+                <div class="col-md-8 text-center text-md-start">
+                    <p>I am a Front-End Developer with over a year of experience in Angular, React, and JavaScript. I am skilled in UI/UX, security, and performance optimization. I am proficient in data structures, algorithms, and cross-team collaboration.</p>
+                    <a href="Jatin-Kumar-Resume.pdf" download class="btn btn-outline-primary mt-3">
+                        <i class="fas fa-download me-2"></i>Download Resume
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
-    <section id="projects" class="projects section" data-aos="fade-up" data-aos-delay="300">
-      <div class="container">
-        <h2>Projects</h2>
-        <div class="project-list">
-          <div class="project-card">
-            <h3>Resume Builder</h3>
-            <p>Created an interactive resume builder using React and JSON to streamline the resume creation process.</p>
-          </div>
-          <div class="project-card">
-            <h3>Sudoku Solver</h3>
-            <p>Developed a Python-based Sudoku solver employing the backtracking algorithm to efficiently solve puzzles.</p>
-          </div>
-          <div class="project-card">
-            <h3>Leave Application System</h3>
-            <p>Built a leave application system with user-friendly interfaces for leave requests and admin approvals, using HTML, CSS, JavaScript, PHP, and MySQL.</p>
-          </div>
-          <div class="project-card">
-            <h3>College Website</h3>
-            <p>Designed and implemented a comprehensive college website using HTML, CSS, JavaScript, PHP, and MySQL.</p>
-          </div>
+
+    <!-- Skills Section -->
+    <section id="skills" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="row">
+                <div class="col-md-3 col-sm-6"><div class="skill-item">HTML5</div></div>
+                <div class="col-md-3 col-sm-6"><div class="skill-item">CSS3</div></div>
+                <div class="col-md-3 col-sm-6"><div class="skill-item">JavaScript (ES6)</div></div>
+                <div class="col-md-3 col-sm-6"><div class="skill-item">Angular</div></div>
+                <div class="col-md-3 col-sm-6"><div class="skill-item">React</div></div>
+                <div class="col-md-3 col-sm-6"><div class="skill-item">Core Java</div></div>
+                <div class="col-md-3 col-sm-6"><div class="skill-item">SQL</div></div>
+                <div class="col-md-3 col-sm-6"><div class="skill-item">Handlebars.js</div></div>
+                <div class="col-md-3 col-sm-6"><div class="skill-item">Jasmine & Karma</div></div>
+                <div class="col-md-3 col-sm-6"><div class="skill-item">Algorithms & Data Structures</div></div>
+            </div>
         </div>
-      </div>
     </section>
-    <section id="education" class="education section" data-aos="fade-up" data-aos-delay="400">
-      <div class="container">
-        <h2>Education</h2>
-        <ul>
-          <li><strong>MCA</strong>, Birla Institute of Technology, Mesra (2020 – 2022)</li>
-          <li><strong>BSc. CA</strong>, Gossner College (2017 – 2020)</li>
-          <li><strong>12th</strong>, D.A.V. Public School, Hehal (2016 – 2017)</li>
-        </ul>
-      </div>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>Analyst, Deloitte USI</h4>
+                    <p><em>11/2022 - Present | Hyderabad, India</em></p>
+                    <ul>
+                        <li>Delivered high-complexity user stories, enhancing project functionality.</li>
+                        <li>Resolved bugs promptly, ensuring seamless project operation.</li>
+                        <li>Developed sticky functionalities like floating labels and navigation menus.</li>
+                        <li>Utilized HTML5, CSS3, SCSS, Handlebars.js, and ES6 for interactive components.</li>
+                        <li>Received Spot Award for Outstanding performance.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h4>Intern, The Sparks Foundation</h4>
+                    <p><em>07/2021 - 08/2021</em></p>
+                    <ul>
+                        <li>Gained hands-on experience in cloud computing.</li>
+                        <li>Learned and implemented AWS EC2 Instance and S3 Service.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h4>Intern, Central Coalfields Limited</h4>
+                    <p><em>02/2020 - 03/2020 | Ranchi, India</em></p>
+                    <ul>
+                        <li>Worked on a Biometric Attendance System project.</li>
+                        <li>Used HTML, CSS, JS, PHP, and MySQL.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card project-card h-100">
+                        <div class="card-body">
+                            <i class="fas fa-file-alt"></i>
+                            <h5 class="card-title">Resume Builder</h5>
+                            <p class="card-text">An interactive resume builder using React and JSON.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card project-card h-100">
+                        <div class="card-body">
+                            <i class="fas fa-puzzle-piece"></i>
+                            <h5 class="card-title">Sudoku Solver</h5>
+                            <p class="card-text">A Python-based Sudoku solver using the backtracking algorithm.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card project-card h-100">
+                        <div class="card-body">
+                            <i class="fas fa-calendar-alt"></i>
+                            <h5 class="card-title">Leave Application System</h5>
+                            <p class="card-text">A system for leave requests and administrative approvals.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card project-card h-100">
+                        <div class="card-body">
+                            <i class="fas fa-university"></i>
+                            <h5 class="card-title">College Website</h5>
+                            <p class="card-text">A comprehensive college website design.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>MCA, Birla Institute of Technology, Mesra</h4>
+                    <p><em>2020 - 2022</em></p>
+                </div>
+                <div class="timeline-item">
+                    <h4>BSc. CA, Gossner College</h4>
+                    <p><em>2017 - 2020</em></p>
+                </div>
+                <div class="timeline-item">
+                    <h4>12th, D.A.V. Public School, Hehal</h4>
+                    <p><em>2016 - 2017</em></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section Trigger -->
+    <section id="contact" class="bg-light text-center">
+        <div class="container">
+             <h2 class="section-title">Contact Me</h2>
+             <p class="lead">I'm open to new opportunities. Let's get in touch!</p>
+             <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#contactModal">
+                Send a Message
+             </button>
+        </div>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Jatin Kumar. All Rights Reserved.</p>
+    </footer>
+
     <!-- Contact Modal -->
-    <div id="contactModal" class="modal">
-      <div class="modal-content">
-        <span class="close" id="closeModal">&times;</span>
-        <h2>Contact Me</h2>
-        <form id="modal-contact-form" action="mailto:jatinkr27@gmail.com" method="POST" enctype="text/plain">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-          <textarea name="message" placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="contactModalLabel">Contact Me</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="3" required></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </div>
+        </div>
       </div>
     </div>
-  </main>
-  <footer>
-    <div class="container">
-      <p>&copy; 2024 Jatin Kumar. All rights reserved.</p>
-    </div>
-  </footer>
-  <script src="script.js"></script>
-  <script>AOS.init({ once: true, duration: 900, easing: 'ease-in-out' });</script>
+
+
+    <!-- Scroll to Top Button -->
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                // Check if the link is meant to open the modal
+                if (this.getAttribute('data-bs-toggle') !== 'modal') {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Scroll to top button functionality
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollTopBtn.style.display = "block";
+            } else {
+                scrollTopBtn.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Add scroll-triggered animations (fade-in effect)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        });
+        const hiddenElements = document.querySelectorAll('section');
+        hiddenElements.forEach((el) => observer.observe(el));
+    </script>
 </body>
 </html>
+
