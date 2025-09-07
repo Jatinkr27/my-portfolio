@@ -1,11 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jatin Kumar | Frontend Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body>
-    Hello, World! How are you today? I am jatin!!
+  <div id="background-graphics"></div>
+  <header class="hero">
+    <div class="container">
+      <div class="hero-top">
+        <div class="profile-photo">
+          <img src="profile-placeholder.png" alt="Jatin Kumar Photo" />
+        </div>
+        <div class="hero-info">
+          <h1>Jatin Kumar</h1>
+          <p class="subtitle">Front-End Developer | 3 Years Experience | Angular & React Specialist</p>
+          <div class="contact-info">
+            <a href="mailto:jatinkr27@gmail.com">jatinkr27@gmail.com</a> |
+            <a href="tel:+919102007474">+91 9102007474</a> |
+            Hyderabad, Telangana, India
+          </div>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/jatin-kumar-9429771b3/" target="_blank">LinkedIn</a> |
+            <a href="#" target="_blank">Portfolio Link</a>
+          </div>
+          <div class="hero-actions">
+            <a href="#" class="cta" id="contactMeBtn">Contact Me</a>
+            <a href="resume.pdf" class="cta" download>Download Resume</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <nav class="navbar">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="about" class="about section" data-aos="fade-up">
+      <div class="container">
+        <h2>About Me</h2>
+        <p>Front-End Developer with 3 years of experience in Angular, React, and JavaScript. Skilled in UI/UX, security, and performance optimization. Proficient in data structures, algorithms, and cross-team collaboration.</p>
+      </div>
+    </section>
+    <section id="skills" class="skills section" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
+        <h2>Key Skills</h2>
+        <ul class="skills-list">
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript (ES6)</li>
+          <li>Angular</li>
+          <li>React.js</li>
+          <li>C</li>
+          <li>Core Java</li>
+          <li>SQL</li>
+          <li>Algorithms & Data Structures</li>
+          <li>Handlebars.js</li>
+          <li>Jasmine & Karma</li>
+        </ul>
+      </div>
+    </section>
+    <section id="experience" class="experience section" data-aos="fade-up" data-aos-delay="200">
+      <div class="container">
+        <h2>Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-date">11/2022 – Present</span>
+            <h3>Analyst, Deloitte USI | Hyderabad, India</h3>
+            <ul>
+              <li>Front-End Developer</li>
+              <li>Delivered high-complexity user stories, enhancing project functionality and client satisfaction.</li>
+              <li>Resolved bugs promptly, ensuring seamless project operation and client satisfaction.</li>
+              <li>Developed sticky functionalities for clients, including floating labels, navigation menus, and other components, improving user experience.</li>
+              <li>Crafted the bottom navigation bar, contributing to project navigation efficiency.</li>
+              <li>Utilized HTML5, CSS3, SCSS, Handlebars.js, and ES6 to create interactive components (modals, tabs, sections), enhancing UI and UX.</li>
+              <li>Maintained speedy, error-free, optimized delivery, accurate work status reporting, sprint demos, and minimized spill-overs, gaining client trust.</li>
+              <li>Received Spot Award for Outstanding performance.</li>
+              <li><strong>Exploring:</strong> Angular for dynamic SPAs, Transmit Security for security protocols, Jasmine & Karma for unit testing and code reliability.</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-date">07/2021 – 08/2021</span>
+            <h3>Intern, The Sparks Foundation</h3>
+            <ul>
+              <li>Cloud Computing: Implemented AWS EC2 Instance and S3 Service.</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-date">02/2020 – 03/2020</span>
+            <h3>Intern, Central Coalfields Limited | Ranchi, India</h3>
+            <ul>
+              <li>Coverage Of Biometric Attendance System.</li>
+              <li>Recorded employee registration for Biometric Attendance System across branches.</li>
+              <li>Technologies: HTML, CSS, JS, PHP, MySQL.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="projects" class="projects section" data-aos="fade-up" data-aos-delay="300">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="project-list">
+          <div class="project-card">
+            <h3>Resume Builder</h3>
+            <p>Created an interactive resume builder using React and JSON to streamline the resume creation process.</p>
+          </div>
+          <div class="project-card">
+            <h3>Sudoku Solver</h3>
+            <p>Developed a Python-based Sudoku solver employing the backtracking algorithm to efficiently solve puzzles.</p>
+          </div>
+          <div class="project-card">
+            <h3>Leave Application System</h3>
+            <p>Built a leave application system with user-friendly interfaces for leave requests and admin approvals, using HTML, CSS, JavaScript, PHP, and MySQL.</p>
+          </div>
+          <div class="project-card">
+            <h3>College Website</h3>
+            <p>Designed and implemented a comprehensive college website using HTML, CSS, JavaScript, PHP, and MySQL.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="education" class="education section" data-aos="fade-up" data-aos-delay="400">
+      <div class="container">
+        <h2>Education</h2>
+        <ul>
+          <li><strong>MCA</strong>, Birla Institute of Technology, Mesra (2020 – 2022)</li>
+          <li><strong>BSc. CA</strong>, Gossner College (2017 – 2020)</li>
+          <li><strong>12th</strong>, D.A.V. Public School, Hehal (2016 – 2017)</li>
+        </ul>
+      </div>
+    </section>
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2>Contact Me</h2>
+        <form id="modal-contact-form" action="mailto:jatinkr27@gmail.com" method="POST" enctype="text/plain">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Jatin Kumar. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+  <script>AOS.init({ once: true, duration: 900, easing: 'ease-in-out' });</script>
 </body>
 </html>
