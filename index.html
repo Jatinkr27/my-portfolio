@@ -110,10 +110,24 @@
         .btn-primary-custom:hover {
             background-color: rgba(100, 255, 218, 0.1);
         }
+        
+        .btn-secondary-custom {
+            color: var(--text-color-dark);
+            background-color: transparent;
+            border: 1px solid var(--text-color-dark);
+            padding: 1rem 1.75rem;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary-custom:hover {
+            background-color: rgba(136, 146, 176, 0.1);
+        }
 
         /* --- General Section Styling --- */
         section {
-            padding: 100px 0;
+            padding: 100px 0 60px; /* Reduced bottom padding */
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
@@ -161,6 +175,7 @@
             border-radius: 5px;
             font-weight: 500;
             margin-bottom: 15px;
+            margin-right: 10px;
             display: inline-block;
             border-left: 2px solid var(--primary-color);
         }
@@ -334,15 +349,19 @@
             <h2 class="section-title">About Me</h2>
             <div class="row align-items-center">
                 <div class="col-md-7">
-                    <p>Hello! I'm Jatin, a front-end developer with a passion for creating dynamic and user-friendly web interfaces. With over a year of experience, I've honed my skills in Angular, React, and modern JavaScript, transforming complex problems into elegant, efficient code.</p>
-                    <p>I am skilled in UI/UX principles, application security, and performance optimization, with a strong foundation in data structures and algorithms. I thrive in collaborative environments and I'm always eager to learn new technologies.</p>
+                    <p>Hello! I'm Jatin, a Front-End Developer with over a year of experience in Angular, React, and JavaScript. I am passionate about creating dynamic and user-friendly web interfaces, transforming complex problems into elegant, efficient code.</p>
+                    <p>I am skilled in UI/UX principles, application security, and performance optimization, with a strong foundation in data structures and algorithms. I thrive in collaborative environments, enjoy working with cross-functional teams, and am always eager to learn new technologies.</p>
                     <div class="mt-4">
                         <div class="skill-item">Angular</div>
                         <div class="skill-item">React</div>
                         <div class="skill-item">JavaScript (ES6+)</div>
                         <div class="skill-item">HTML5 & CSS3</div>
+                        <div class="skill-item">Handlebars.js</div>
                         <div class="skill-item">Jasmine & Karma</div>
+                        <div class="skill-item">Core Java</div>
                         <div class="skill-item">SQL</div>
+                        <div class="skill-item">Data Structures</div>
+                        <div class="skill-item">Algorithms</div>
                     </div>
                 </div>
                  <div class="col-md-5 text-center mt-4 mt-md-0">
@@ -359,16 +378,24 @@
                     <h4>Analyst, Deloitte USI</h4>
                     <p><em>11/2022 - Present | Hyderabad, India</em></p>
                     <ul>
-                        <li>Deliver high-complexity user stories, enhancing project functionality and performance using modern front-end frameworks.</li>
-                        <li>Develop reusable and accessible components with a focus on clean code and maintainability.</li>
-                        <li>Collaborate with cross-functional teams to define, design, and ship new features.</li>
+                        <li>Successfully delivered high-complexity user stories, enhancing project functionality and client satisfaction.</li>
+                        <li>Utilized HTML5, CSS3, SCSS, Handlebars.js, and ES6 to create various interactive components like modals and tabs.</li>
+                        <li>Developed sticky functionalities for clients, including floating labels and navigation menus to improve user experience.</li>
+                        <li>Maintained a focus on speedy, error-free, and optimized delivery, earning a Spot Award for outstanding performance.</li>
                     </ul>
                 </div>
                 <div class="timeline-item">
                     <h4>Intern, The Sparks Foundation</h4>
                     <p><em>07/2021 - 08/2021</em></p>
                     <ul>
-                        <li>Gained hands-on experience in cloud computing, implementing and managing AWS EC2 and S3 services.</li>
+                        <li>Gained hands-on experience in cloud computing, implementing and managing AWS EC2 instances and S3 services.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h4>Intern, Central Coalfields Limited</h4>
+                    <p><em>02/2020 - 03/2020 | Ranchi, India</em></p>
+                    <ul>
+                        <li>Developed and implemented a Biometric Attendance System using HTML, CSS, JS, PHP, and MySQL.</li>
                     </ul>
                 </div>
             </div>
@@ -378,25 +405,32 @@
         <section id="projects">
             <h2 class="section-title">Things I’ve Built</h2>
             <div class="row">
-                <div class="col-md-6 col-lg-4 mb-4">
+                <div class="col-md-6 mb-4">
                     <div class="card project-card h-100">
                         <i class="fas fa-file-alt"></i>
                         <h5 class="card-title">Resume Builder</h5>
-                        <p class="card-text">An interactive resume builder using React and JSON.</p>
+                        <p class="card-text">An interactive resume builder using React and JSON to streamline the resume creation process.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 mb-4">
+                <div class="col-md-6 mb-4">
                     <div class="card project-card h-100">
                         <i class="fas fa-puzzle-piece"></i>
                         <h5 class="card-title">Sudoku Solver</h5>
-                        <p class="card-text">A Python-based Sudoku solver using the backtracking algorithm.</p>
+                        <p class="card-text">A Python-based Sudoku solver using the backtracking algorithm to solve puzzles efficiently.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 mb-4">
+                <div class="col-md-6 mb-4">
                     <div class="card project-card h-100">
                         <i class="fas fa-calendar-alt"></i>
                         <h5 class="card-title">Leave Application System</h5>
-                        <p class="card-text">A full-stack system for leave requests and administrative approvals.</p>
+                        <p class="card-text">A full-stack system for leave requests and administrative approvals, built with HTML, CSS, JS, PHP & MySQL.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card project-card h-100">
+                        <i class="fas fa-school"></i>
+                        <h5 class="card-title">College Website</h5>
+                        <p class="card-text">Designed and implemented a comprehensive college website using HTML, CSS, JavaScript, PHP, and MySQL.</p>
                     </div>
                 </div>
             </div>
@@ -413,6 +447,10 @@
                 <div class="timeline-item">
                     <h4>BSc. CA, Gossner College</h4>
                     <p><em>2017 - 2020</em></p>
+                </div>
+                <div class="timeline-item">
+                    <h4>12th, D.A.V. Public School, Hehal</h4>
+                    <p><em>2016 - 2017</em></p>
                 </div>
             </div>
         </section>
@@ -449,7 +487,7 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary-custom" data-bs-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary-custom">Send Message</button>
           </div>
         </div>
